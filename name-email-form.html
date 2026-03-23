@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Form</title>
+    <style>
+      @use postcss-preset-env {
+        stage: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > input {
+          flex: 1 1 10ch;
+          margin: 0.5rem;
+
+          &[type="email"] {
+            flex: 3 1 30ch;
+          }
+        }
+      }
+
+      input {
+        border: none;
+        background: hsl(0 0% 93%);
+        border-radius: 0.25rem;
+        padding: 0.75rem 1rem;
+
+        &[type="submit"] {
+          background: hotpink;
+          color: white;
+          box-shadow: 0 0.75rem 0.5rem -0.5rem hsl(0 50% 80%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="text" placeholder="Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="submit" value="Subscribe" />
+    </form>
+  </body>
+</html>

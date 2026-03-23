@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Direction</title>
+    <style>
+        .main{
+            
+            display:flex;
+            border: 2px solid lightcoral;
+            flex-wrap: wrap;
+            flex-direction: row;
+        
+        }
+        .main div{
+            
+            background-color: peachpuff;
+            border: 2px solid rgb(139, 46, 62);
+            border-radius: 5px;
+            height: 50px;
+            max-width: 200px;
+            min-width: 150px;
+            margin: 2px;
+            padding: 5px;
+
+            flex: 1 1 0%;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+
+    </div>
+    
+</body>
+</html>
