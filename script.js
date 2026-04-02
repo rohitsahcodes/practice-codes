@@ -1,44 +1,59 @@
 
 
-// mdn-- - clicked button code
+// javascript.info/switch
 
-console.log(4);
-let age;
-age = 334;
-if (age >= 14 && age <= 90) console.log("Age is between 14 and 19 inclusive");
+// //change the switch to if else
+// switch (browser) {
+//   case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
 
-if (!(age >= 14 && age <= 90)) console.log("Age is not between 14 to 19 inclusive");
+//   case 'Chrome':
+//   case 'Firefox':
+//   case 'Safari':
+//   case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
 
-if (age < 14 || age > 90) console.log("Age is not between 14 to 90 inclusive... using if only")
+//   default:
+//     alert( 'We hope that this page looks ok!' );
+// }
+// //Answer
+let browser = prompt('Baby! which browse you use?', '')
+if (browser === 'Edge') alert("You've got the Edge!");
+else if (browser === 'Chrome'
+  || browser === 'Firefox'
+  || browser === 'Safari'
+  || browser === 'Opera') alert('Okay we support these browsers too');
+else if (browser === '') alert('Idiot! type carefully');
+else if (browser === null) alert('Cancelled');
+else alert('We hope that this page looks ok!');
 
+// //change if else to switch
+// let a = +prompt('a?', '');
 
-if (-1 || 0) console.log('first'); //first
+// if (a == 0) {
+//   alert( 0 );
+// }
+// if (a == 1) {
+//   alert( 1 );
+// }
 
-if (-1 && 0) alert( 'second' ); // no execution
+// if (a == 2 || a == 3) {
+//   alert( '2,3' );
+// }
 
-if (null || -1 && 1) console.log('thirt'); // //third
-
-
-
-let user = prompt("Who's there?","");
-// console.log(user);
-
-if (user === "Admin"){
-  let adminPassword = prompt("password", "");
-  if(adminPassword === "TheMaster"){
-    alert("Welcome!");
-  }
-  else if(adminPassword === '' || adminPassword === null){
-    alert("Cancelled");
-  }
-  else{
-    alert("Wrong password");
-  }
-  
-}
-else if (user === '' || user === null){
-  alert("Canceled");
-}
-else{
-  alert("I don't know you");
+// Answer
+let a = +prompt('a?', '')
+switch (a){
+  case 0:
+    alert(0);
+    break;
+  case 1:
+    alert(1);
+    break;
+  case 2:
+  case 3:
+    alert('2,3');
+    break;
 }
