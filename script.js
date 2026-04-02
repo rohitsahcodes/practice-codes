@@ -21,14 +21,14 @@ if (null || -1 && 1) console.log('thirt'); // //third
 
 
 let user = prompt("Who's there?","");
-console.log(user);
+// console.log(user);
 
-if (user == "Admin"){
+if (user === "Admin"){
   let adminPassword = prompt("password", "");
-  if(adminPassword =="TheMaster"){
+  if(adminPassword === "TheMaster"){
     alert("Welcome!");
   }
-  else if(adminPassword == null){
+  else if(adminPassword === '' || adminPassword === null){
     alert("Cancelled");
   }
   else{
@@ -36,7 +36,7 @@ if (user == "Admin"){
   }
   
 }
-else if (user == null){
+else if (user === '' || user === null){
   alert("Canceled");
 }
 else{
