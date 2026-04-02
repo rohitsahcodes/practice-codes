@@ -2,79 +2,43 @@
 
 // mdn-- - clicked button code
 
+console.log(4);
+let age;
+age = 334;
+if (age >= 14 && age <= 90) console.log("Age is between 14 and 19 inclusive");
 
-function createParagraph() {
-  const para = document.createElement("p");
-  para.textContent = "You just clicked the button!";
-  document.body.appendChild(para);
-}
+if (!(age >= 14 && age <= 90)) console.log("Age is not between 14 to 19 inclusive");
 
-const buttons = document.querySelectorAll("button");
-
-for (const button of buttons) {
-  button.addEventListener("click", createParagraph);
-}
+if (age < 14 || age > 90) console.log("Age is not between 14 to 90 inclusive... using if only")
 
 
-console.log("Hey, baby!");
+if (-1 || 0) console.log('first'); //first
 
-// //messing with object..
-// let user= {name: "Rohit", age: 23
-// };
+if (-1 && 0) alert( 'second' ); // no execution
 
-// console.log(user);
-
-// user.sex = "male";
-// user["still virgin"] = true;
-
-// let key = "still learning";
-// user[key] = true;
-
-// let fruit = prompt("Which fruits you want to buy?", "apple");
-
-// let bag = {
-//   [fruit]: 5,
-// };
-// console.log( bag.apple);
-
-// function makeUser(name, age){
-//   return{
-//     name: name,
-//     age: age,
-//   };
-// }
-
-// let user1 = makeUser("Rohit", 23);
-// console.log(user1.name);
-// console.log(user1.age);
-
-// let user2 = makeUser("Nitesh", 22);
-// console.log(user2.name);
-// console.log(user2.age);
-
-// let user3 = makeUser("Sabina", 20);
-// console.log(user3.name);
-// console.log(user3.age);
-
-// // there is no reserved word restriction while naming.. 0 also can be used it auto-- changed into string..
-// let obj ={
-//   if: 1,
-//   or: 2,
-//   else: 3,
-//   return: 4,
-//   for: 5,
-//   0: 6,
-// }
-// console.log(obj.if + obj.or +obj.else + obj.return + obj.for + obj[0]);
+if (null || -1 && 1) console.log('thirt'); // //third
 
 
-let user = {};
-user.name = 'John';
-user.surname = "Smit";
 
-user.name = "Peter";
-delete user.name;
-
+let user = prompt("Who's there?","");
 console.log(user);
 
-
+if (user == "Admin"){
+  let adminPassword = prompt("password", "");
+  if(adminPassword =="TheMaster"){
+    alert("Welcome!");
+  }
+  else if(adminPassword == null){
+    alert("Cancelled");
+  }
+  else{
+    alert("Wrong password");
+  }
+  
+}
+else if (user == null){
+  alert("Canceled");
+}
+else{
+  alert("I don't know you");
+}
