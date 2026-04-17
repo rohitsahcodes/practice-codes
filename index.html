@@ -4,10 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's begin js</title>
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+    <style>html {
+        font-family: sans-serif;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .a11y-label {
+        margin: 0;
+        text-align: right;
+        font-size: 0.7rem;
+        width: 98%;
+      }
+
+      body {
+        margin: 10px;
+        background: #f5f9fa;
+      }
+
+      .output {
+        height: 100px;
+        overflow: auto;
+      }</style>
   </head>
   <body>
-    <button>click me!</button>
+    <div class="output">
+      <p class="admitted">Admit:</p>
+      <p class="refused">Refuse:</p>
+    </div>
 
+    <script>
+      const people = [
+        "Chris",
+        "Anne",
+        "Colin",
+        "Terri",
+        "Phil",
+        "Lola",
+        "Sam",
+        "Kay",
+        "Bruce",
+      ];
+
+      const admitted = document.querySelector(".admitted");
+      const refused = document.querySelector(".refused");
+      admitted.textContent = "Admit: ";
+      refused.textContent = "Refuse: ";
+
+      // loop starts here
+
+      console.log(people);
+      console.log(people.length);
+
+      const pWala = people.filter((guests) => guests.startsWith("P"));
+      console.log(pWala);
+
+      const lWala = people.filter((guests) => guests.startsWith("L"));
+      console.log(lWala);
+
+      function isRefused(guest) {
+        return guest.startsWith("P") || guest.startsWith("L");
+      }
+      for (let i = 0; i < people.length; i++) {
+        if (isRefused(people[i])) {
+          refused.textContent += people[i] + ", ";
+        } else {
+          admitted.textContent += people[i] + ", ";
+        }
+
+      }
+      // refused.textContent += ...;
+      // admitted.textContent += ...;
+    </script>   
+
+    
   </body>
 </html>
