@@ -2,26 +2,38 @@
 
 
 
-// make even number triple and sum them;
 
-let arr = [1, 2, 3, 4, 5, 6];
-function sumOfTripledEvens() {
-  let result =  arr.reduce((acc, curr) => {
-    if (curr % 2 === 0) curr *= 3;
-    acc += curr;
-    return acc;
-  }, 0);
-  console.log(`The sum or vlues of array when even value is triples is : ${result}`);
+//camelizing using "for" loop and "map" method
 
+// //using "for loop"
+// function camelize(str) {
+//   let container = [];
+//   let splitted = str.split("-");
+//   console.log(splitted);  // splitted = ['background', 'color']
+//   for (let i = 0; i < splitted.length; i++) {
+//     console.log(splitted.length, i)
+//     if (i === 0) container.push(splitted[i]);
+//     else container.push(splitted[i].charAt(0).toUpperCase() + splitted[i].slice(1));
+//     console.log("container : ", container);
+//   }
+
+//   let result = container.join('');
+//   return result;
+
+// }
+
+
+// using map methods
+function camelize(str){
+  let container = [];
+  let splitted = str.split("-");    // splitted = ['background', 'color']
+  let mapp = splitted.map((item, index) => (index === 0) ? item : item.charAt(0).toUpperCase() + item.slice(1));
+  mapp = mapp.join('');
+  console.log(mapp);
 }
 
-console.log(arr);
-sumOfTripledEvens();
 
-
-
-
-
+console.log(camelize("background-color-hlo"));
 
 
 
