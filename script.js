@@ -1,18 +1,21 @@
 
-
+//basic filter and for
 
 
 
 let arr = [1, 2, 3, 4, 5, 6];
-let result = 0;
+
+//using for loop
 let container = [];
 for (let i = 0; i < arr.length; i++){
-  result = arr[i]+1;
-  container.push(result);
+  if (arr[i]%2 === 0) container.push(arr[i]); //it stores items when if condition is true
 }
 console.log(container);
 
-let mappedArr = arr.map(item => item + 1)
+
+
+//filter method method used
+let mappedArr = arr.filter(item => item %2 === 0)
 console.log(mappedArr);
 
 
