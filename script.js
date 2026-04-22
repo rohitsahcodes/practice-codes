@@ -1,42 +1,43 @@
 
+let string = "RohitO";
+let vowels = "aeiouAEIOU";
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function suffle(arr){
-  for (let i = 0; i < arr.length; i++){
-    let r = Math.floor(Math.random() * arr.length);
-    let temp = arr[i];
-    arr[i] = arr[r];
-    arr[r]= temp;
+let result = [];
+function checkVowels(str, vowels){
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+      if (str.charAt(i) === vowels.charAt(j)) {
+        result.push(str.charAt(i));
+      }
+      
+    } 
   }
+  return result;
 }
-let arr = [1, 2, 3];
-suffle(arr);
-console.log(arr);
+
+
+console.log(checkVowels(string, vowels))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
