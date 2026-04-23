@@ -1,23 +1,39 @@
-
-let string = "RohitO";
-let vowels = "aeiouAEIOU";
-
-
-let result = [];
-function checkVowels(str, vowels){
+const str = "Heena";
+function checkRepetedLetter(str) {
+  let temp = "";
   for (let i = 0; i < str.length; i++) {
-    for (let j = 0; j < vowels.length; j++) {
-      if (str.charAt(i) === vowels.charAt(j)) {
-        result.push(str.charAt(i));
-      }
-      
-    } 
+    if(str[i] === temp){
+      console.log(`The first repeted letter is "${str[i]}"`);
+      break;
+    }
+    temp = str[i];
   }
-  return result;
 }
 
 
-console.log(checkVowels(string, vowels))
+
+
+
+checkRepetedLetter(str);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
