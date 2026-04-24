@@ -5,81 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's begin js</title>
     <!-- <script src="script.js" defer></script> -->
-    <style>html {
-        font-family: sans-serif;
-      }
-
-      h2 {
-        font-size: 16px;
-      }
-
-      .a11y-label {
-        margin: 0;
-        text-align: right;
-        font-size: 0.7rem;
-        width: 98%;
-      }
-
-      body {
-        margin: 10px;
-        background: #f5f9fa;
-      }
-
-      .output {
-        height: 100px;
-        overflow: auto;
-      }</style>
   </head>
+
   <body>
-    <div class="output">
-      <p class="admitted">Admit:</p>
-      <p class="refused">Refuse:</p>
-    </div>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <hr />
+    <div id="container"></div>
+    <hr />
 
     <script>
-      const people = [
-        "Chris",
-        "Anne",
-        "Colin",
-        "Terri",
-        "Phil",
-        "Lola",
-        "Sam",
-        "Kay",
-        "Bruce",
-      ];
+      // your JavaScript file
+      const container = document.querySelector("#container");
 
-      const admitted = document.querySelector(".admitted");
-      const refused = document.querySelector(".refused");
-      admitted.textContent = "Admit: ";
-      refused.textContent = "Refuse: ";
+      const content = document.createElement("div");
+      content.classList.add("content");
+      content.textContent = "This is the glorious text-content!";
 
-      // loop starts here
+      container.appendChild(content);
 
-      console.log(people);
-      console.log(people.length);
+      //my code goes here.. 
+      const para = document.createElement("p"); //add this in container
+      para.textContent = "Hey I'm red!";
+      para.style.color = "red";
+      container.appendChild(para);
 
-      const pWala = people.filter((guests) => guests.startsWith("P"));
-      console.log(pWala);
+      const h3 = document.createElement("h3"); //add this in container
+      h3.textContent = "I'm a blue h3!";
+      h3.style.color = "blue";
+      container.appendChild(h3);
 
-      const lWala = people.filter((guests) => guests.startsWith("L"));
-      console.log(lWala);
+      const content1 = document.createElement("div"); //add this in container
+      content1.setAttribute("style", "border: 2px solid black; background-color: pink");
+      
+      const h1 = document.createElement("h1"); //add this in content1
+      h1.textContent = "I'm in a div";
+      content1.appendChild(h1);
+      content1.appendChild(h1);
+      
+      const divPara = document.createElement("p"); //add this in content1
+      divPara.textContent = "ME TOO!";
+      content1.appendChild(divPara);
+      
 
-      function isRefused(guest) {
-        return guest.startsWith("P") || guest.startsWith("L");
-      }
-      for (let i = 0; i < people.length; i++) {
-        if (isRefused(people[i])) {
-          refused.textContent += people[i] + ", ";
-        } else {
-          admitted.textContent += people[i] + ", ";
-        }
-
-      }
-      // refused.textContent += ...;
-      // admitted.textContent += ...;
-    </script>   
-
-    
+      container.appendChild(content1);
+    </script>
   </body>
 </html>
