@@ -8,46 +8,27 @@
   </head>
 
   <body>
-    <h1>THE TITLE OF YOUR WEBPAGE</h1>
-    <hr />
-    <div id="container"></div>
-    <hr />
+    <!-- inline html (bad practice) -->
+     <button onclick="alertFunction()">Click Me1</button>
+    <!-- <button onclick="console.log('Hello World!')">Click Me1</button> -->
+    <button id="btn2">Click Me2</button>
+    <button id="btn3">Click Me3</button>
 
     <script>
-      // your JavaScript file
-      const container = document.querySelector("#container");
+      // DOM property
+      const btn2 = document.querySelector("#btn2");
+      btn2.onclick = alertFunction;
+      // btn2.onclick = () => console.log("Hello World!!");
 
-      const content = document.createElement("div");
-      content.classList.add("content");
-      content.textContent = "This is the glorious text-content!";
-
-      container.appendChild(content);
-
-      //my code goes here.. 
-      const para = document.createElement("p"); //add this in container
-      para.textContent = "Hey I'm red!";
-      para.style.color = "red";
-      container.appendChild(para);
-
-      const h3 = document.createElement("h3"); //add this in container
-      h3.textContent = "I'm a blue h3!";
-      h3.style.color = "blue";
-      container.appendChild(h3);
-
-      const content1 = document.createElement("div"); //add this in container
-      content1.setAttribute("style", "border: 2px solid black; background-color: pink");
-      
-      const h1 = document.createElement("h1"); //add this in content1
-      h1.textContent = "I'm in a div";
-      content1.appendChild(h1);
-      content1.appendChild(h1);
-      
-      const divPara = document.createElement("p"); //add this in content1
-      divPara.textContent = "ME TOO!";
-      content1.appendChild(divPara);
+      // addEventListener (best practice)
+      const btn3 = document.querySelector("#btn3");
+      btn3.addEventListener("click", alertFunction);
+      // btn3.addEventListener("click", () => console.log("Hello World!!!"));
       
 
-      container.appendChild(content1);
+      function alertFunction(){
+        alert("YAY! YOU DID IT!");
+      }
     </script>
   </body>
 </html>
