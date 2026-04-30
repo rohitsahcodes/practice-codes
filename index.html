@@ -15,50 +15,55 @@
     </style>
   </head>
   <body>
-    <section>
-      <img
-        src="https://github.com/mdn/learning-area/blob/main/javascript/apis/document-manipulation/dinosaur.png?raw=true"
-        alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
-      />
-      <p>
-        Here we will add a link to the
-        <a href="https://www.mozilla.org/">Mozilla homepage</a>
-      </p>
-    </section>
+    <h1>My shopping list</h1>
+    <div class="enterAddItems">
+      Enter a new item:
+      <input type="text" id="item" />
+      <button id="btn">Add item</button>
+    </div>
+    <ul></ul>
+
     <script>
-      let link = document.querySelector("a");
-      link.textContent = "Mozilla Developer Network";
-      link.href = "https://developer.mozilla.org";
+      const item = document.querySelector("#item");
+      const btn = document.querySelector("#btn");
 
-      const sect = document.querySelector("section");
+      const ul = document.querySelector("ul");
 
-      const para = document.createElement("p");
-      para.textContent = "I am enjoying the ride.";
+      //also execute click function when entered "Enter" key..
+      item.addEventListener("keydown", (e)=>{
+        if (e.key === "Enter"){
+          btn.click();
+        }
+      });
+      
+      //click function 
+      btn.addEventListener("click", ()=> {
+        // console.log(item.value);
+        const newItems = item.value + "  ";
 
-      sect.appendChild(para);
+        const newList = document.createElement("li");
+        newList.textContent= newItems;
+        // console.log(newList);
 
-      const text = document.createTextNode(
-        " - the premier source for web development knowledge.",
-      );
+        ul.appendChild(newList);
+        
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        
+        newList.appendChild(delBtn);
 
-      const linkPara = document.querySelector("p");
-      linkPara.appendChild(text);
+        item.value = "";
 
-      sect.appendChild(linkPara);
+        newList.style.paddingBottom= "10px";
 
-      // sect.removeChild(linkPara);
+        //to delete the specific list item using delete button
+        delBtn.addEventListener("click",()=>{
+          newList.remove();
+        })
 
-      linkPara.remove();
-
-      // // styling using inline style... if we look on inspect you can see it is applied inline html
-      // para.style.color = "white";
-      // para.style.backgroundColor = "black";
-      // para.style.padding = "10px";
-      // para.style.width = "250px";
-      // para.style.textAlign = "center";
-
-      //adding and removing style using classList ... this will add class= "highlight" in html
-      para.classList.add("highlight");
+        //to get focus back on input.. 
+        item.focus();
+      })
 
     </script>
   </body>
