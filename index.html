@@ -1,34 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Let's begin js</title>
-    <!-- <script src="script.js" defer></script> -->
-  </head>
-
-  <body>
-    <!-- inline html (bad practice) -->
-     <button onclick="alertFunction()">Click Me1</button>
-    <!-- <button onclick="console.log('Hello World!')">Click Me1</button> -->
-    <button id="btn2">Click Me2</button>
-    <button id="btn3">Click Me3</button>
-
-    <script>
-      // DOM property
-      const btn2 = document.querySelector("#btn2");
-      btn2.onclick = alertFunction;
-      // btn2.onclick = () => console.log("Hello World!!");
-
-      // addEventListener (best practice)
-      const btn3 = document.querySelector("#btn3");
-      btn3.addEventListener("click", alertFunction);
-      // btn3.addEventListener("click", () => console.log("Hello World!!!"));
-      
-
-      function alertFunction(){
-        alert("YAY! YOU DID IT!");
+    <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
       }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img
+        src="https://github.com/mdn/learning-area/blob/main/javascript/apis/document-manipulation/dinosaur.png?raw=true"
+        alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth."
+      />
+      <p>
+        Here we will add a link to the
+        <a href="https://www.mozilla.org/">Mozilla homepage</a>
+      </p>
+    </section>
+    <script>
+      let link = document.querySelector("a");
+      link.textContent = "Mozilla Developer Network";
+      link.href = "https://developer.mozilla.org";
+
+      const sect = document.querySelector("section");
+
+      const para = document.createElement("p");
+      para.textContent = "I am enjoying the ride.";
+
+      sect.appendChild(para);
+
+      const text = document.createTextNode(
+        " - the premier source for web development knowledge.",
+      );
+
+      const linkPara = document.querySelector("p");
+      linkPara.appendChild(text);
+
+      sect.appendChild(linkPara);
+
+      // sect.removeChild(linkPara);
+
+      linkPara.remove();
+
+      // // styling using inline style... if we look on inspect you can see it is applied inline html
+      // para.style.color = "white";
+      // para.style.backgroundColor = "black";
+      // para.style.padding = "10px";
+      // para.style.width = "250px";
+      // para.style.textAlign = "center";
+
+      //adding and removing style using classList ... this will add class= "highlight" in html
+      para.classList.add("highlight");
+
     </script>
   </body>
 </html>
